@@ -39,7 +39,7 @@ db_port = int(os.environ.get('DB_PORT', '3306'))
 db_schema = os.environ.get('DB_SCHEMA', 'zonmart')
 ""
 OR, 
-MaKe provide in terminal
+Provide env variable in terminal
 set DB_USERNAME=$Your_custom_username
 set DB_PASSWORD=$Your_custom_password
 set DB_HOST=$Your_custom_host
@@ -81,12 +81,19 @@ pip install -r requirements.txt
 ### SQL database setup 
 Run commands of SQL_Zonmart_DDLs.txt to execute database creation, table creation and modifications. 
 The SQL database should run on following environment configurations: 
+""
 username = 'root'
 password = 'AshaShiva#08'
 host = 'localhost'
 port = 3306
 database_schema = 'zonmart' 
-
+OR,
+provide custom values and then run in terminal : 
+set DB_USERNAME=$Your_custom_username
+set DB_PASSWORD=$Your_custom_password
+set DB_HOST=$Your_custom_host
+set DB_SCHEMA=Your_custom_schema
+""
 ## Usage
 
 To start the application, run:
