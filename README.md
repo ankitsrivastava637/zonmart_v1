@@ -28,6 +28,16 @@ Additional features like rate API limiting and API access authorization are in p
 
 The project also assumes that there will be no dependency errors due to version or package/software mismatches during deployment on any other platform.
 
+The environment variables can be further specified in deployed platform instead being hard coded in the project to make security high for the envoironment variable and secret keys. This also helps if code is used on staging server(testing server for all features tested on local), deployment server(replica of production server with cherry picked features for testing) or production server(main server for users)
+example environment varaibles which can be removed from being hard coded are : 
+""
+username = 'root'
+password = 'AshaShiva#08'
+host = 'localhost'
+port = 3306
+database_schema = 'zonmart' 
+""
+
 ## Pre-requisites
 
 - SQL workbench installed.
@@ -59,6 +69,15 @@ source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+
+### SQL database setup 
+Run commands of SQL_Zonmart_DDLs.txt to execute database creation, table creation and modifications. 
+The SQL database should run on following environment configurations: 
+username = 'root'
+password = 'AshaShiva#08'
+host = 'localhost'
+port = 3306
+database_schema = 'zonmart' 
 
 ## Usage
 
