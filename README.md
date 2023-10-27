@@ -13,6 +13,7 @@ Zonmart is a Ecommerce backend project that runs locally and utilizes FastAPI an
 - Data Integrity: Zonmart ensures data integrity by generating unique IDs for users.
 
 ## Assumptions
+- Here the get_user_by_id has been mostly used, so user_id is being used for acccessing particular user assuming that front-end developer or other developer accessing the route has user_id while calling, but it can be replcaed with username. For this the route can be replaced with username and other function could be used for getting user by username and username can be made unique.
 
 - This project is part of a more extensive backend system that includes other features within different apps. These apps can access Zonmart's APIs through cross-origin communication.
 
