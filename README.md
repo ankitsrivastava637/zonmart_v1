@@ -29,17 +29,22 @@ Zonmart is a Ecommerce backend project that runs locally and utilizes FastAPI an
 - The project also assumes that there will be no dependency errors due to version or package/software mismatches during deployment on any other platform.
 
 - The environment variables can be further specified in deployed platform instead being hard coded in the project to make security high for the envoironment variable and secret keys. This also helps if code is used on staging server(testing server for all features tested on local), deployment server(replica of production server with cherry picked features for testing) or production server(main server for users)
-example environment varaibles which can be removed from being hard coded are : 
+example environment varaibles which can be removed from being hard coded are (here default values are given if no special environments variable are given): 
 ""
-username = 'root'
-password = 'AshaShiva#08'
-host = 'localhost'
-port = 3306
-database_schema = 'zonmart' 
+db_username = os.environ.get('DB_USERNAME', 'root')
+db_password = os.environ.get('DB_PASSWORD', 'AshaShiva#08')
+db_host = os.environ.get('DB_HOST', 'localhost')
+db_port = int(os.environ.get('DB_PORT', '3306'))
+db_schema = os.environ.get('DB_SCHEMA', 'zonmart')
 ""
 OR, 
-MaKe change in main.py to accept environment variables for database username and server , host, port , to use custom based values.
-
+MaKe provide in terminal
+set DB_USERNAME=$Your_custom_username
+set DB_PASSWORD=$Your_custom_password
+set DB_HOST=$Your_custom_host
+set DB_SCHEMA=Your_custom_schema
+""
+Note : To use different functionalities for deployment on staging, deployment and production server many other changes are requied. USing environment variable through platform/server defined varaibale names(instead of default values) is just on of the functionality required.
 ## Pre-requisites
 
 - SQL workbench installed.
