@@ -39,11 +39,12 @@ db_port = int(os.environ.get('DB_PORT', '3306'))
 db_schema = os.environ.get('DB_SCHEMA', 'zonmart')
 ""
 OR, 
-Provide env variable in terminal
+Provide env variable in terminal. (for windows users)
 set DB_USERNAME=$Your_custom_username
 set DB_PASSWORD=$Your_custom_password
 set DB_HOST=$Your_custom_host
 set DB_SCHEMA=Your_custom_schema
+>> USE 'export' instead of 'set' for mac
 ""
 - Note : To use different functionalities for deployment on staging, deployment and production server many other changes are requied. USing environment variable through platform/server defined varaibale names(instead of default values) is just on of the functionality required.
 ## Pre-requisites
@@ -88,11 +89,12 @@ host = 'localhost'
 port = 3306
 database_schema = 'zonmart' 
 OR,
-provide custom values and then run in terminal : 
+provide custom values and then run in terminal (for windows users) : 
 set DB_USERNAME=$Your_custom_username
 set DB_PASSWORD=$Your_custom_password
 set DB_HOST=$Your_custom_host
 set DB_SCHEMA=Your_custom_schema
+>> USE 'export' instead of 'set' for mac
 ""
 ## Usage
 
