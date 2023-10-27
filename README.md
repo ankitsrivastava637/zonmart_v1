@@ -37,6 +37,8 @@ host = 'localhost'
 port = 3306
 database_schema = 'zonmart' 
 ""
+OR, 
+MaKe change in main.py to accept environment variables for database username and server , host, port , to use custom based values.
 
 ## Pre-requisites
 
