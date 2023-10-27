@@ -86,7 +86,7 @@ def get_user_orders(db: Session, user_id: str):
     return db.query(database.models.OrderTable).filter(database.models.OrderTable.user_id == user_id).all()
 
 def cancel_order(db: Session, order_id: int):
-    order = db.query(database.models.OrderTable).filter(database.models.OrderTable.id == order_id, models.OrderTable.status == "active").first()
+    order = db.query(database.models.OrderTable).filter(database.models.OrderTable.id == order_id, database.models.OrderTable.status == "active").first()
     if order:
         order.status = "cancelled"
         db.commit()

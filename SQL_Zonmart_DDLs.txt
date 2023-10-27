@@ -24,6 +24,7 @@ CREATE TABLE user_carts (
 );
 
 
+
 -- Define indexes for optimization
 CREATE INDEX idx_users_username ON users (username);
 CREATE INDEX idx_products_name ON products (name);
@@ -76,3 +77,6 @@ ADD COLUMN version INT DEFAULT 1 NOT NULL;
 
 
 
+---- Alter the table to add a unique constraint on the "username" column
+-- ALTER TABLE users
+-- ADD CONSTRAINT username_unique UNIQUE (username);

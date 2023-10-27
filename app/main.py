@@ -19,6 +19,7 @@ from fastapi_limiter import FastAPILimiter
 from fastapi_limiter.depends import RateLimiter
 from fastapi.middleware.cors import CORSMiddleware
 from functools import lru_cache
+import os
 
 app = FastAPI()
 
@@ -59,14 +60,15 @@ def rate_limit(limit: int, interval: int):
     return decorator
 
 
-username = 'root'
-password = 'AshaShiva#08'
-host = 'localhost'
-port = 3306
-database_schema = 'zonmart'
+# Get environment variables or use default values
+db_username = os.environ.get('DB_USERNAME', 'root')
+db_password = os.environ.get('DB_PASSWORD', 'AshaShiva#08')
+db_host = os.environ.get('DB_HOST', 'localhost')
+db_port = int(os.environ.get('DB_PORT', '3306'))
+db_schema = os.environ.get('DB_SCHEMA', 'zonmart')
 
 # Database connection string
-DATABASE_URL = f"mysql://{username}:{password}@{host}:{port}/{database_schema}"
+DATABASE_URL = f"mysql://{db_username}:{db_password}@{db_host}:{db_port}/{db_schema}"
 
 # SQLAlchemy database engine
 engine = create_engine(DATABASE_URL)
