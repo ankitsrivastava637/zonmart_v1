@@ -1,8 +1,8 @@
-Certainly! Here's a reproduced README for your project:
+
 
 # Zonmart
 
-Zonmart is a project that runs locally and utilizes FastAPI and SQL for its operation.
+Zonmart is a Ecommerce backend project that runs locally and utilizes FastAPI and SQL for its operation.
 
 ## Features
 
