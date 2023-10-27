@@ -1,0 +1,78 @@
+/*create database zonmart;
+-- Define the table for users
+USE zonmart;
+
+-- Define a table for users
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    hashed_password VARCHAR(100) NOT NULL
+);
+
+-- Define a table for products
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+-- Define a table for user carts (assuming a many-to-many relationship)
+CREATE TABLE user_carts (
+    user_id INT REFERENCES users(id),
+    product_id INT REFERENCES products(id)
+);
+
+
+-- Define indexes for optimization
+CREATE INDEX idx_users_username ON users (username);
+CREATE INDEX idx_products_name ON products (name);
+
+-- Alter the users table to use UUID for the id column
+-- Note: Replace 'your_db_type' with the actual UUID data type for your database (e.g., uuid in PostgreSQL)
+ALTER TABLE users
+MODIFY COLUMN id VARCHAR(36);
+
+-- Alter the 'products' table
+ALTER TABLE products
+MODIFY COLUMN id VARCHAR(36);
+
+-- Alter the user_carts table to use UUID for the user_id and product_id columns
+-- Note: Replace 'your_db_type' with the actual UUID data type for your database (e.g., uuid in PostgreSQL)
+ALTER TABLE user_carts
+MODIFY COLUMN user_id VARCHAR(36);
+ALTER TABLE user_carts
+MODIFY COLUMN product_id VARCHAR(36);
+*/
+/*-- Alter the 'users' table
+ALTER TABLE users
+RENAME COLUMN hashed_password TO password;
+
+
+
+ALTER TABLE users
+ADD COLUMN version INT DEFAULT 1 NOT NULL;
+*/
+
+-- select * from zonmart.users;
+
+
+-- Add an 'orders' table
+-- CREATE TABLE orders (
+--     id SERIAL PRIMARY KEY,
+--     user_id VARCHAR(50) REFERENCES users(id),
+--     product_id VARCHAR(50) REFERENCES products(id),
+--     quantity INT,
+--     order_date TIMESTAMP DEFAULT NOW()
+-- );
+
+-- Add an 'address' column to the 'users' table
+-- ALTER TABLE users
+-- ADD COLUMN address TEXT;
+
+-- Add a 'status' column to the 'orders' table
+-- ALTER TABLE orders
+-- ADD COLUMN status VARCHAR(20) DEFAULT 'active';
+
+
+
