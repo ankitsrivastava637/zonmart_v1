@@ -31,26 +31,34 @@ Python installed in vs-code
 
 # Project Setup
 ## Clone the project from terminal: 
+```bash
    git clone  https://github.com/ankitsrivastava637/zonmart_v1.git
+```
 
 ## Naviagate to the project directory from terminal
+```bash
 cd zonmart_v1
+```
 
 ## Create a virtual environment (recommended):
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-
+```
 ## Install project dependencies:
+```bash
 pip install -r requirements.txt
-
+```
 # Ussage
 ## To start the application, run:
+```bash
 uvicorn app.main:app --reload
-
+```
 # Testing
 ## Run the test using pytest:
+```bash
 pytest
-
+```
 ## Run test using swagger UI 
 run http://127.0.0.1:8000/docs in browser and test routes through try it out options.
 
